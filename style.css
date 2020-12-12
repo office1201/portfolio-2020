@@ -60,7 +60,7 @@ button {
 /* Typograghy */
 h1 {
     font-size: var(--font-large);
-    font-weight: var(--weight-bold);
+    font-weight: var(--weight-semi-bold);
     color: var(--color-black);
     margin: 16px, 0;
 }
@@ -151,5 +151,44 @@ p {
     padding: 8px 12px;
     border: 2px solid var(--color-white);
     border-radius: 4px;
+}
+
+/* Section Common */
+.section {
+    text-align: center;
+    padding: 50px;
+ /* 1000~1200 desktop max-width */
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* About */
+.about__majors {
+    display: flex;
+    justify-content: space-between;
+    margin: 80px 0;
+}
+
+.major__icon {
+    width: 170px;
+    height: 170px;
+    /* line-height to keep the font in the center */
+    line-height: 170px;
+    font-size: 70px;
+    margin: auto;
+    color: var(--color-blue);
+    border: 1px solid var(--color-blue);
+    border-radius: 50%;
+    margin-bottom: 16px;
     
+}
+
+/* About-active */
+.major__icon i:hover {
+    color: var(--color-pink);
+    transform: scale(1.05);
+}
+
+.major__title, .major__description {
+    color: var(--color-dark-grey);
 }
