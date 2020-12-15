@@ -12,7 +12,7 @@
   --color-blue: #73aace;
   --color-yellow: #fff7d1;
   --color-orange: #f2b546;
-  --color-red: rgb(243, 44, 44);
+  --color-red: #ff0000;
   --color-black: #000000;
   
 
@@ -97,9 +97,10 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-pink);
+    background-color: var(--color-dark-pink);
     color: var(--color-white);
-    padding: 16px;
+    padding: 4px 18px;
+    
 }
 
 .navbar__logo {
@@ -126,7 +127,17 @@ p {
 }
 
 .navbar__menu__item:hover {
-    background-color: var(--color-dark-pink);
+    background-color: var(--color-pink);
+}
+
+/* Navbar-toogle-btn */
+.navbar__toggle-btn {
+    position: absolute;
+    top: 12px;
+    right: 32px;
+    font-size: 24px;
+    color: var(--color-white);
+    display: none;
 }
 
 /* Home */
@@ -428,13 +439,13 @@ p {
     margin-left: 40px;
 }
 
-.testimonial__sppech-bubble {
+.testimonial__speech-bubble {
     padding: 18px;
     background-color: white;
     border-radius: var(--size-border-radius);
 }
 
-.testimonial__sppech-bubble p {
+.testimonial__speech-bubble p {
     color: var(--color-light-grey);
 }
 
@@ -466,4 +477,44 @@ p {
     transform: scale(1.1);
     color: var(--color-red);
     
+}
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+.navbar__toggle-btn {
+    display: block;
+}
+
+#navbar {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+}
+
+.about__majors {
+    flex-direction: column;
+}
+
+.major {
+    margin-bottom: 38px;
+}
+
+.skillset {
+    flex-direction: column;
+}
+
+.project {
+    flex-grow: 1;
+}
+
+.testimonial___avatar {
+    width: 80px;
+    height: 80px;
+}
 }
