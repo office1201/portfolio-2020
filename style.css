@@ -465,5 +465,5 @@ p {
 .contact__links i:hover {
     transform: scale(1.1);
     color: var(--color-red);
-    transition: all var(--animation-duration) ease-in;
+    
 }
