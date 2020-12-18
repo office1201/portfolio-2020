@@ -14,6 +14,7 @@
   --color-orange: #f2b546;
   --color-red: #ff0000;
   --color-black: #000000;
+  --color-purple: #B98D9C;
   
 
   /* Font Size */
@@ -94,12 +95,19 @@ p {
 
 /* Navbar */
 #navbar {
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-dark-pink);
+    background-color: transparent;
     color: var(--color-white);
     padding: 4px 18px;
+    transition: all var(--animation-duration) ease-in-out;
+}
+
+#navbar.navbar--dark {
+    background-color: var(--color-purple);
     
 }
 
@@ -143,7 +151,8 @@ p {
 /* Home */
 #home {
     background: url("img/home/home-background3.png") center/cover no-repeat;
-    padding: 160px;
+    padding: 40px;
+    padding-top: 200px;
     text-align: center;
 }
 
@@ -475,7 +484,7 @@ p {
 
 .contact__links i:hover {
     transform: scale(1.1);
-    color: var(--color-red);
+    
     
 }
 
