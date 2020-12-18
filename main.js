@@ -13,7 +13,7 @@ document.addEventListener('scroll' , () => {
 });
 
 // Handle scrolling when tapping on the navbar menu
-// navbar menu를 눌렀을 때 화면이동을 위한 로직
+// navbar menu를 눌렀을 때 화면이동
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
     const target = event.target;
@@ -22,6 +22,18 @@ navbarMenu.addEventListener('click', (event) => {
         return;
     }
 
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior: "smooth"});
+    scrollIntoView(link);
 });
+
+
+// Handle click on "contact me" button on home
+// contact me를 눌렀을 때 화면이동
+const homeContactBtn = document.querySelector('.home__contact');
+homeContactBtn.addEventListener('click', () => {
+    scrollIntoView('#contact');
+});
+
+function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior: "smooth"});
+}
