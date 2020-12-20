@@ -109,7 +109,6 @@ p {
 
 #navbar.navbar--dark {
     background-color: var(--color-purple);
-    
 }
 
 .navbar__logo {
@@ -142,7 +141,7 @@ p {
 /* Navbar-toogle-btn */
 .navbar__toggle-btn {
     position: absolute;
-    top: 12px;
+    top: 8px;
     right: 32px;
     font-size: 24px;
     color: var(--color-white);
