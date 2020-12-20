@@ -63,9 +63,35 @@ arrowUp.addEventListener('click', () => {
 });
 
 
+// Projects
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const Projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (e) => {
+// (강조) 프로젝트 안에 있는 span이 클릭 시 (데이터 값이 추출이 안되는 문제 발견됨
+// 디버깅을 통하여 watch의 add watch expression에서  
+// e.target.parentNode.dataset.filter에 있는 필터 값을 추출
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    if (filter == null) {
+        return;
+    }
+// 클릭 시 애니메이션 추가
+    projectContainer.classList.add('anim-out');
+    
+// opacity가 1로 돌아올 수 있도록 하기 위함
+    setTimeout(() => {
+        Projects.forEach((Project) => {
+        
+            if(filter ==='*' || filter === Project.dataset.type) {
+                Project.classList.remove('invisible');
+            } else {
+                Project.classList.add('invisible');
+            }
+        });
+        projectContainer.classList.remove('anim-out');
+    }, 300);
 
-
-
+});
 
 
 
