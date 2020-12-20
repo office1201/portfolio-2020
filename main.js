@@ -43,9 +43,24 @@ document.addEventListener('scroll', () => {
 })
 
 
+// Show "arrow up" button when scrolling down
+// 화살표 방향키를 이용하여 화면이동
+// 다큐먼트의 또 다른 이벤트 리스너를 추가해서 스크롤이 될 때 원하는 함수를 호출
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll', () => {
+    if (window.scrollY > homeHeight / 2) {
+        arrowUp.classList.add('visible');
+    } else {
+        arrowUp.classList.remove('visible');
+    }
+});
 
 
-
+// Handle click on the "arrow up" button
+// arrowUp이 또 다른 이벤트 리스너를 추가해서 클릭이 되었을 때 원하는 함수를 호출
+arrowUp.addEventListener('click', () => {
+    scrollIntoView('#home');
+});
 
 
 
