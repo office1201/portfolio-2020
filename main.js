@@ -13,8 +13,11 @@ document.addEventListener('scroll', () => {
     
 });
 
+
+
 // Handle scrolling when tapping on the navbar menu
 // navbar menu를 눌렀을 때 화면이동
+// 토글버튼 클릭 시 navbar menu가 사라지도록
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
     const target = event.target;
@@ -22,9 +25,18 @@ navbarMenu.addEventListener('click', (event) => {
     if(link == null) {
         return;
     }
-
+    navbarMenu.classList.remove('open');
     scrollIntoView(link);
 });
+
+// navbar toogle button for small screen
+// navbar toogle button을 눌렀을때 반응형
+// navbarMeunu가 위에 정의되어 있으니 cascading하게
+const navbarToogleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToogleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
+});
+
 
 // Handle click on "contact me" button on home
 // contact me를 눌렀을 때 화면이동
@@ -79,6 +91,7 @@ workBtnContainer.addEventListener('click', (e) => {
     projectContainer.classList.add('anim-out');
     
 // opacity가 1로 돌아올 수 있도록 하기 위함
+// 0.3초 다음에 코드 실행을 하기 위해 코드 setTimeout 이후에 적용
     setTimeout(() => {
         Projects.forEach((Project) => {
         
