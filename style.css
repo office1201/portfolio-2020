@@ -334,7 +334,8 @@ p {
     border: 1px solid var(--color-dark-white);
     border-radius: var(--size-border-radius);
     font-size: var(--weight-regular);
-    padding: 8px 48px;
+    padding: 4px 48px;
+    position: relative;
 }
 
 /* categories__btn-active */
@@ -358,9 +359,9 @@ p {
     height: 24px;
     line-height: 24px;
     display: inline-block;
-    position: relative;
+    position: absolute;
     top: -20px;
-    left: 8px;
+    right: 15px;
     opacity: 0;
     transition: all var(--animation-duration) ease-in;
 }
@@ -568,8 +569,39 @@ p {
     flex-grow: 1;
 }
 
-.testimonial___avatar {
-    width: 80px;
-    height: 80px;
+.category__btn {
+    margin: 2px 0;
+    width: 100%;
 }
+
+.category__count {
+    right: 160px;
+}
+
+.testimonial___avatar {
+    width: 130px;
+    height: 130px;
+}
+
+.testimonial {
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial___avatar:nth-child(even), 
+.testimonial___avatar:nth-child(odd) {
+    margin: 0;
+}
+
+/* 목록의 순서를 바꾸는데 order의 기본값은 항상 '0', 
+따라서 .testimonial__speech-bubble에게 order: 1; 값을 준 것 */
+.testimonial__speech-bubble {
+    order: 1;
+    margin-top: 10px;
+}
+
+.arrow-up {
+    font-size: 40px;
+    bottom: 25px;
+    right: 0;
 }
